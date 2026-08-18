@@ -205,12 +205,14 @@ body.light .quiz-opt{background:rgba(0,0,0,.04);color:#1a0a2e;border-color:rgba(
   #nav .logo{font-size:1.3rem}
   #nav .nav-links{
     display:none;position:fixed;inset:0;
-    background:rgba(15,10,26,.97);backdrop-filter:blur(20px);
-    flex-direction:column;align-items:center;justify-content:center;gap:14px;
-    z-index:1000
+    background:#0a0614;
+    flex-direction:column;align-items:center;justify-content:center;gap:16px;
+    z-index:9998
   }
+  #nav.nav-open{z-index:9999}
   #nav .nav-links.open{display:flex}
-  #nav .nav-links button{font-size:1.1rem;padding:14px 36px;width:72%;text-align:center}
+  #nav .nav-links button{font-size:1.15rem;padding:15px 0;width:78%;text-align:center;border:1px solid rgba(249,168,212,.18);border-radius:16px;background:rgba(255,255,255,.04)}
+  #nav .nav-links button:hover,#nav .nav-links button.active{background:rgba(249,168,212,.14);border-color:rgba(249,168,212,.4)}
   #hero{padding:80px 16px 60px}
   .hero-letter{padding:16px 18px;margin:18px auto 22px}
   .hero-letter p{font-size:.82rem}
@@ -225,9 +227,9 @@ body.light .quiz-opt{background:rgba(0,0,0,.04);color:#1a0a2e;border-color:rgba(
   #quiz{padding:80px 16px 60px}
   .quiz-options{grid-template-columns:1fr}
   .quiz-img{max-height:260px}
-  .slide-controls{flex-wrap:wrap;gap:8px;bottom:24px;width:92%;justify-content:center}
-  .slide-controls button{padding:8px 14px;font-size:.78rem}
-  .slide-caption{bottom:130px;width:90%;left:50%}
+  .slide-controls{flex-wrap:wrap;gap:8px;bottom:calc(56px + env(safe-area-inset-bottom,16px));width:92%;justify-content:center}
+  .slide-controls button{padding:10px 16px;font-size:.82rem}
+  .slide-caption{bottom:calc(170px + env(safe-area-inset-bottom,16px));width:90%;left:50%}
   .slide-caption h3{font-size:1.6rem;white-space:normal;text-align:center}
   #lb .lb-arrow{width:40px;height:40px;font-size:20px}
   #lb .lb-prev{left:4px}
@@ -237,10 +239,10 @@ body.light .quiz-opt{background:rgba(0,0,0,.04);color:#1a0a2e;border-color:rgba(
   #lb .lb-close{top:10px;right:10px;width:38px;height:38px;font-size:18px}
   #lb .lb-dl{bottom:12px;right:10px;padding:8px 14px;font-size:.75rem}
   #lb .lb-counter{bottom:12px;font-size:.7rem}
-  .music-btn{bottom:14px;right:14px;width:44px;height:44px;font-size:18px}
+  .music-btn{bottom:calc(16px + env(safe-area-inset-bottom,0px));right:14px;width:44px;height:44px;font-size:18px}
   .facts-grid{grid-template-columns:1fr}
 }
-body.light #nav .nav-links{background:rgba(253,246,255,.97)}
+body.light #nav .nav-links{background:#fdf6ff}
 </style>
 </head>
 <body>
@@ -476,8 +478,7 @@ const CHAPTERS = [
 const PAGE_DISPLAY = {hero:'flex', bhutki:'block', chapters:'block', gallery:'block', quiz:'block', slideshow:'block'};
 let activePage = 'hero';
 function goTo(id) {
-  document.getElementById('nav-links').classList.remove('open');
-  document.getElementById('ham-btn').classList.remove('open');
+  closeNav();
   document.querySelectorAll('.page').forEach(p => { p.style.display = 'none'; });
   document.querySelectorAll('#nav .nav-links button:not(.theme-btn)').forEach(b => b.classList.remove('active'));
   const page = document.getElementById(id);
@@ -914,14 +915,19 @@ observeSR();
 function toggleNav() {
   const links = document.getElementById('nav-links');
   const btn = document.getElementById('ham-btn');
+  const nav = document.getElementById('nav');
+  const opening = !links.classList.contains('open');
   links.classList.toggle('open');
   btn.classList.toggle('open');
+  nav.classList.toggle('nav-open', opening);
+}
+function closeNav() {
+  document.getElementById('nav-links').classList.remove('open');
+  document.getElementById('ham-btn').classList.remove('open');
+  document.getElementById('nav').classList.remove('nav-open');
 }
 document.querySelectorAll('#nav-links button').forEach(b => {
-  b.addEventListener('click', () => {
-    document.getElementById('nav-links').classList.remove('open');
-    document.getElementById('ham-btn').classList.remove('open');
-  });
+  b.addEventListener('click', closeNav);
 });
 
 // ── TOUCH SWIPE: LIGHTBOX ──
