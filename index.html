@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday Radha 🌸</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Poppins",sans-serif;background:#0f0a1a;color:#f0e8ff;overflow-x:hidden}
+
+/* ── NAV ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:999;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:rgba(15,10,26,.85);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
+#nav .logo{font-family:"Dancing Script",cursive;font-size:1.6rem;color:#f9a8d4;letter-spacing:.5px}
+#nav .nav-links{display:flex;gap:6px}
+#nav .nav-links button{border:none;background:transparent;padding:8px 16px;border-radius:999px;cursor:pointer;font-family:"Poppins",sans-serif;font-size:.82rem;font-weight:600;color:rgba(240,232,255,.7);transition:.25s}
+#nav .nav-links button:hover,#nav .nav-links button.active{background:rgba(249,168,212,.15);color:#f9a8d4}
+
+/* ── PAGES ── */
+.page{min-height:100vh}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 24px 60px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 20% 50%,#2d0a4e 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,#0d2b5e 0%,transparent 55%),linear-gradient(160deg,#0f0a1a 0%,#160d2a 50%,#0a0f1a 100%)}
+#hero canvas{position:absolute;inset:0;pointer-events:none}
+.hero-content{position:relative;z-index:2}
+.hero-eyebrow{text-transform:uppercase;letter-spacing:4px;font-size:.72rem;font-weight:600;color:#a78bfa;margin-bottom:18px}
+.hero-name{font-family:"Dancing Script",cursive;font-size:clamp(5rem,16vw,11rem);line-height:.9;background:linear-gradient(135deg,#f9a8d4 0%,#c084fc 40%,#818cf8 70%,#67e8f9 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 60px rgba(192,132,252,.4))}
+.hero-sub{margin-top:22px;font-size:clamp(1rem,3vw,1.3rem);font-weight:300;color:rgba(240,232,255,.7);max-width:520px;line-height:1.7}
+.hero-date{margin-top:14px;font-size:.85rem;letter-spacing:2px;color:#a78bfa;font-weight:600}
+.hero-btn{margin-top:36px;display:inline-flex;align-items:center;gap:10px;padding:15px 32px;border-radius:999px;border:none;cursor:pointer;font-family:"Poppins",sans-serif;font-weight:700;font-size:1rem;background:linear-gradient(135deg,#c084fc,#818cf8);color:#fff;transition:.3s;box-shadow:0 0 40px rgba(192,132,252,.4)}
+.hero-btn:hover{transform:translateY(-3px);box-shadow:0 8px 50px rgba(192,132,252,.6)}
+.floating-hearts{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.fh{position:absolute;font-size:1.5rem;opacity:0;animation:floatHeart 6s ease-in infinite}
+@keyframes floatHeart{0%{opacity:0;transform:translateY(0) scale(.7)}10%{opacity:.8}90%{opacity:.3}100%{opacity:0;transform:translateY(-100vh) scale(1.2) rotate(20deg)}}
+
+/* ── CHAPTERS PAGE ── */
+#bhutki{background:linear-gradient(180deg,#0f0a1a 0%,#160d2a 100%)}
+#chapters{padding:100px 24px 80px;background:linear-gradient(180deg,#0f0a1a 0%,#160d2a 100%)}
+.section-title{font-family:"Dancing Script",cursive;font-size:clamp(2.5rem,7vw,4.5rem);text-align:center;color:#f9a8d4;margin-bottom:10px}
+.section-sub{text-align:center;color:rgba(240,232,255,.5);font-size:.95rem;margin-bottom:52px}
+.chapters-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px;max-width:1100px;margin:0 auto}
+.chapter-card{border-radius:24px;overflow:hidden;cursor:pointer;position:relative;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;transition:.35s;border:1px solid rgba(255,255,255,.07)}
+.chapter-card:hover{transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.chapter-card .cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s}
+.chapter-card:hover .cover-img{transform:scale(1.07)}
+.chapter-card .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,5,20,.9) 0%,rgba(10,5,20,.3) 50%,transparent 100%)}
+.chapter-card .card-body{position:relative;z-index:2;padding:22px}
+.chapter-card .card-emoji{font-size:2rem;margin-bottom:8px}
+.chapter-card h3{font-family:"Dancing Script",cursive;font-size:1.8rem;color:#fff;margin-bottom:4px}
+.chapter-card p{font-size:.8rem;color:rgba(255,255,255,.65);margin-bottom:10px}
+.chapter-card .badge{display:inline-block;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.12);backdrop-filter:blur(6px);font-size:.72rem;font-weight:600;color:rgba(255,255,255,.85)}
+
+/* ── GALLERY PAGE ── */
+#gallery{padding:80px 24px 80px;background:linear-gradient(180deg,#0f0a1a 0%,#0a0f1a 100%)}
+.gallery-header{max-width:1200px;margin:0 auto 36px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.gallery-back{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:999px;border:1px solid rgba(167,139,250,.3);background:transparent;cursor:pointer;font-family:"Poppins",sans-serif;font-size:.85rem;font-weight:600;color:#a78bfa;transition:.25s}
+.gallery-back:hover{background:rgba(167,139,250,.1)}
+.gallery-title-wrap h2{font-family:"Dancing Script",cursive;font-size:clamp(2rem,5vw,3rem);color:#f9a8d4}
+.gallery-title-wrap p{color:rgba(240,232,255,.5);font-size:.85rem}
+.masonry{column-count:4;column-gap:14px;max-width:1200px;margin:0 auto}
+@media(max-width:1100px){.masonry{column-count:3}}
+@media(max-width:720px){.masonry{column-count:2}}
+@media(max-width:420px){.masonry{column-count:1}}
+.m-item{break-inside:avoid;margin-bottom:14px;border-radius:16px;overflow:hidden;cursor:pointer;position:relative;background:#1a1025}
+.m-item img{width:100%;height:auto;display:block;transition:.4s}
+.m-item:hover img{transform:scale(1.04)}
+.m-item .photo-name{position:absolute;bottom:0;left:0;right:0;padding:28px 12px 10px;background:linear-gradient(to top,rgba(10,5,20,.85),transparent);opacity:0;transition:.3s;font-size:.7rem;color:rgba(255,255,255,.8);text-transform:capitalize}
+.m-item:hover .photo-name{opacity:1}
+
+/* ── LIGHTBOX ── */
+#lb{display:none;position:fixed;inset:0;z-index:9999;background:rgba(5,2,12,.92);backdrop-filter:blur(12px);align-items:center;justify-content:center}
+#lb.show{display:flex}
+#lb .lb-img-wrap{position:relative;max-width:90vw;max-height:88vh}
+#lb img{max-width:90vw;max-height:88vh;border-radius:16px;object-fit:contain;display:block}
+#lb .lb-caption{position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:.78rem;color:rgba(255,255,255,.5);text-transform:capitalize;letter-spacing:.5px}
+#lb .lb-close{position:fixed;top:20px;right:24px;background:rgba(255,255,255,.1);border:none;border-radius:50%;width:44px;height:44px;font-size:22px;color:#fff;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center}
+#lb .lb-close:hover{background:rgba(255,255,255,.2)}
+#lb .lb-arrow{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:none;border-radius:50%;width:48px;height:48px;font-size:22px;color:#fff;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center}
+#lb .lb-arrow:hover{background:rgba(255,255,255,.18)}
+#lb .lb-prev{left:16px}
+#lb .lb-next{right:16px}
+#lb .lb-counter{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);font-size:.78rem;color:rgba(255,255,255,.4)}
+
+/* ── SLIDESHOW PAGE ── */
+#slideshow{position:fixed;inset:0;z-index:200;background:#000;overflow:hidden}
+#slide-bg{position:absolute;inset:-8%;background-size:cover;background-position:center;background-repeat:no-repeat;animation:kenBurns 8s ease-in-out infinite alternate}
+@keyframes kenBurns{0%{transform:scale(1)}100%{transform:scale(1.06)}}
+.slide-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,2,12,.7) 0%,transparent 50%,rgba(5,2,12,.3) 100%)}
+.slide-controls{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:16px;z-index:10}
+.slide-controls button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:999px;padding:10px 22px;cursor:pointer;font-family:"Poppins",sans-serif;font-weight:600;font-size:.85rem;transition:.25s;backdrop-filter:blur(8px)}
+.slide-controls button:hover{background:rgba(255,255,255,.22)}
+.slide-caption{position:absolute;bottom:110px;left:50%;transform:translateX(-50%);text-align:center;z-index:10;pointer-events:none}
+.slide-caption h3{font-family:"Dancing Script",cursive;font-size:2.5rem;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.8);white-space:nowrap;text-transform:capitalize}
+.slide-caption p{color:rgba(255,255,255,.6);font-size:.85rem;margin-top:4px;text-transform:capitalize}
+
+/* ── FOOTER ── */
+footer{text-align:center;padding:32px 24px;background:#080510;color:rgba(240,232,255,.35);font-size:.82rem;border-top:1px solid rgba(255,255,255,.04)}
+footer span{color:#f9a8d4}
+
+/* ── MUSIC PLAYER ── */
+.music-btn{position:fixed;bottom:24px;right:24px;z-index:500;width:52px;height:52px;border-radius:50%;border:none;background:linear-gradient(135deg,#c084fc,#818cf8);color:#fff;font-size:20px;cursor:pointer;box-shadow:0 4px 20px rgba(192,132,252,.5);transition:.3s;display:flex;align-items:center;justify-content:center}
+.music-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(192,132,252,.7)}
+.music-btn.playing{animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(192,132,252,.5)}50%{box-shadow:0 4px 36px rgba(192,132,252,.9)}}
+
+/* ── DOWNLOAD BUTTONS ── */
+.dl-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:999px;border:1px solid rgba(167,139,250,.3);background:transparent;cursor:pointer;font-family:"Poppins",sans-serif;font-size:.82rem;font-weight:600;color:#a78bfa;transition:.25s}
+.dl-btn:hover{background:rgba(167,139,250,.12)}
+.m-item .dl-photo{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.55);border:none;border-radius:50%;width:32px;height:32px;color:#fff;font-size:14px;cursor:pointer;display:none;align-items:center;justify-content:center;transition:.2s}
+.m-item:hover .dl-photo{display:flex}
+#lb .lb-dl{position:fixed;bottom:20px;right:24px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:10px 20px;color:#fff;font-size:.82rem;font-weight:600;cursor:pointer;font-family:"Poppins",sans-serif;transition:.25s}
+#lb .lb-dl:hover{background:rgba(255,255,255,.22)}
+.hero-letter{margin:24px auto 28px;max-width:560px;background:rgba(255,255,255,.06);border:1px solid rgba(249,168,212,.2);border-radius:20px;padding:22px 26px;text-align:left;backdrop-filter:blur(8px)}
+.hero-letter p{font-size:.9rem;line-height:1.8;color:rgba(240,232,255,.8);font-style:italic}
+.hero-letter span{display:block;margin-top:12px;font-weight:700;color:#f9a8d4;font-size:.9rem}
+
+/* ── FACTS GRID ── */
+.facts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;max-width:1100px;margin:0 auto}
+.fact-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:24px;transition:.3s}
+.fact-card:hover{transform:translateY(-5px);background:rgba(249,168,212,.08);border-color:rgba(249,168,212,.2)}
+.fact-card .fact-emoji{font-size:2.2rem;margin-bottom:12px}
+.fact-card h4{font-size:1rem;font-weight:700;color:#f9a8d4;margin-bottom:6px}
+.fact-card p{font-size:.85rem;color:rgba(240,232,255,.6);line-height:1.6}
+.sr-fade{opacity:0;transform:translateY(30px);transition:.7s ease}
+.sr-fade.visible{opacity:1;transform:none}
+.wrap{max-width:1150px;margin:0 auto;padding:110px 24px 80px}
+
+/* ── PAGE TRANSITIONS ── */
+.page-enter{animation:pageIn .4s ease forwards}
+@keyframes pageIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* ── LIGHT MODE ── */
+body.light{background:#fdf6ff;color:#1a0a2e}
+body.light #nav{background:rgba(253,246,255,.9);border-bottom:1px solid rgba(0,0,0,.07)}
+body.light #nav .logo{color:#9333ea}
+body.light #nav .nav-links button{color:rgba(26,10,46,.6)}
+body.light #nav .nav-links button:hover,body.light #nav .nav-links button.active{background:rgba(147,51,234,.12);color:#7c3aed}
+body.light #hero{background:radial-gradient(ellipse at 20% 50%,#f3e8ff,transparent 60%),radial-gradient(ellipse at 80% 20%,#dbeafe,transparent 55%),linear-gradient(160deg,#fdf6ff,#f5f0ff 50%,#f0f9ff)}
+body.light .hero-name{filter:none}
+body.light #chapters,body.light #bhutki{background:linear-gradient(180deg,#fdf6ff,#f5f0ff)}
+body.light #gallery{background:#fdf6ff}
+body.light .chapter-card{border-color:rgba(0,0,0,.1)}
+body.light .fact-card{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.08)}
+body.light .fact-card p{color:rgba(26,10,46,.5)}
+body.light .section-sub{color:rgba(26,10,46,.5)}
+body.light .gallery-title-wrap p{color:rgba(26,10,46,.4)}
+body.light footer{background:#1a0a2e;color:rgba(255,255,255,.4)}
+body.light .hero-letter{background:rgba(147,51,234,.06);border-color:rgba(147,51,234,.2)}
+body.light .hero-letter p{color:rgba(26,10,46,.7)}
+body.light .hero-sub{color:rgba(26,10,46,.6)}
+
+/* ── THEME TOGGLE ── */
+.theme-btn{background:transparent;border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:7px 14px;cursor:pointer;font-size:.8rem;color:rgba(240,232,255,.7);transition:.25s;font-family:"Poppins",sans-serif}
+.theme-btn:hover{background:rgba(255,255,255,.08)}
+body.light .theme-btn{border-color:rgba(0,0,0,.15);color:rgba(26,10,46,.6)}
+
+/* ── BIRTHDAY CAKE ── */
+.cake-wrap{margin:18px auto 0;cursor:pointer;display:inline-block;user-select:none}
+.cake{font-size:3.5rem;display:block;transition:.3s}
+.cake:hover{transform:scale(1.1)}
+.candle-flame{display:inline-block;animation:flicker .6s ease-in-out infinite alternate;transform-origin:bottom}
+@keyframes flicker{0%{transform:scaleY(1) rotate(-3deg)}100%{transform:scaleY(1.15) rotate(3deg)}}
+.flame-out .candle-flame{display:none}
+.puff{display:none;font-size:1.2rem;animation:puffUp .8s ease forwards}
+.flame-out .puff{display:inline-block}
+@keyframes puffUp{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-30px) scale(2)}}
+.cake-hint{font-size:.75rem;color:rgba(240,232,255,.4);margin-top:6px;display:block}
+body.light .cake-hint{color:rgba(26,10,46,.3)}
+
+/* ── SURPRISE BUTTON ── */
+.surprise-btn{margin-top:14px;display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:999px;border:1px solid rgba(249,168,212,.35);background:transparent;cursor:pointer;font-family:"Poppins",sans-serif;font-weight:600;font-size:.9rem;color:#f9a8d4;transition:.3s}
+.surprise-btn:hover{background:rgba(249,168,212,.1);transform:translateY(-2px)}
+
+/* ── QUIZ ── */
+#quiz{background:linear-gradient(180deg,#0f0a1a,#160d2a);padding:100px 24px 80px}
+body.light #quiz{background:linear-gradient(180deg,#fdf6ff,#f5f0ff)}
+.quiz-wrap{max-width:700px;margin:0 auto;text-align:center}
+.quiz-img{width:100%;max-height:420px;object-fit:cover;border-radius:20px;margin:24px 0;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.quiz-opt{padding:14px;border-radius:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);cursor:pointer;font-family:"Poppins",sans-serif;font-size:.9rem;color:#f0e8ff;transition:.25s;text-align:left}
+.quiz-opt:hover{background:rgba(167,139,250,.15);border-color:rgba(167,139,250,.4)}
+.quiz-opt.correct{background:rgba(52,211,153,.2)!important;border-color:#34d399!important;color:#34d399}
+.quiz-opt.wrong{background:rgba(248,113,113,.2)!important;border-color:#f87171!important;color:#f87171}
+body.light .quiz-opt{background:rgba(0,0,0,.04);color:#1a0a2e;border-color:rgba(0,0,0,.1)}
+.quiz-score{font-size:1.1rem;color:#a78bfa;font-weight:700;margin-bottom:16px}
+.quiz-next{margin-top:16px;padding:12px 28px;border-radius:999px;border:none;background:linear-gradient(135deg,#c084fc,#818cf8);color:#fff;font-family:"Poppins",sans-serif;font-weight:700;cursor:pointer;font-size:.95rem;display:none}
+.quiz-result{font-size:1.4rem;font-weight:700;color:#f9a8d4;margin:10px 0}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="logo">Radha ✨</div>
+  <div class="nav-links">
+    <button onclick="goTo('hero')" id="btn-hero" class="active">Home</button>
+    <button onclick="goTo('bhutki')" id="btn-bhutki">Bhutki 🎭</button>
+    <button onclick="goTo('chapters')" id="btn-chapters">Chapters</button>
+    <button onclick="goTo('quiz')" id="btn-quiz">Quiz 🎯</button>
+    <button onclick="goTo('slideshow')" id="btn-slideshow">Slideshow</button>
+    <button class="theme-btn" onclick="toggleTheme()" id="theme-btn">🌙 Dark</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="page" style="display:flex">
+  <canvas id="confetti-canvas"></canvas>
+  <div class="floating-hearts" id="hearts"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">🎭 Happy Birthday, Bhutki</div>
+    <div class="hero-name">Radha</div>
+    <p class="hero-sub">Drama queen. Short legend. My annoying, wonderful little sister. 💜</p>
+    <div class="hero-date">22nd August 2026 🎂</div>
+    <div class="cake-wrap" id="cake-wrap" onclick="blowCandle()" title="Click to blow out the candle!">
+      <span class="cake">🎂<span class="candle-flame">🕯️</span><span class="puff">💨</span></span>
+      <span class="cake-hint">👆 Click to blow out the candle!</span>
+    </div>
+    <div class="hero-letter">
+      <p>"To my little drama queen — you've been the chaos and the colour in this family ever since you arrived and immediately started crying louder than everyone else. I've watched you grow from Bhutki to this ridiculously confident, funny, fierce person and I'm stupidly proud of you. Don't ever change. (Okay maybe tone down the drama slightly. Just slightly.)"</p>
+      <span>— Sugandh 💜</span>
+    </div>
+    <button class="hero-btn" onclick="goTo('chapters')">Open the Memory Book →</button>
+    <button class="surprise-btn" onclick="surpriseMe()">🎲 Surprise Me — show a random memory</button>
+  </div>
+</section>
+
+<!-- BHUTKI FACTS -->
+<section id="bhutki" class="page" style="display:none">
+  <div class="wrap">
+    <h2 class="section-title sr-fade">Things About Bhutki 🎭</h2>
+    <p class="section-sub sr-fade">Documented evidence. Scientifically accurate.</p>
+    <div class="facts-grid" id="facts-grid"></div>
+    <div style="text-align:center;margin-top:40px">
+      <button class="hero-btn" onclick="goTo('chapters')">Now see the photo proof →</button>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<section id="chapters" class="page" style="display:none">
+  <h2 class="section-title sr-fade">The Seven Chapters</h2>
+  <p class="section-sub sr-fade">Click any chapter to open its gallery.</p>
+  <div class="chapters-grid" id="chapters-grid"></div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="page" style="display:none">
+  <div class="gallery-header">
+    <button class="gallery-back" onclick="goTo('chapters')">← Back to Chapters</button>
+    <div class="gallery-title-wrap">
+      <h2 id="gallery-title">Gallery</h2>
+      <p id="gallery-desc"></p>
+    </div>
+    <button class="dl-btn" id="dl-all-btn" onclick="downloadChapter()">⬇ Download All</button>
+  </div>
+  <div class="masonry" id="masonry"></div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="page" style="display:none">
+  <div class="quiz-wrap">
+    <h2 class="section-title">Quiz Time 🎯</h2>
+    <p class="section-sub">Which chapter does this photo belong to?</p>
+    <div class="quiz-score" id="quiz-score">Score: 0 / 0</div>
+    <img class="quiz-img" id="quiz-img" src="" alt="Quiz photo">
+    <div class="quiz-options" id="quiz-options"></div>
+    <button class="quiz-next" id="quiz-next" onclick="nextQuizQ()">Next →</button>
+    <div class="quiz-result" id="quiz-result"></div>
+  </div>
+</section>
+
+<!-- SLIDESHOW -->
+<section id="slideshow" class="page" style="display:none">
+  <div id="slide-bg"></div>
+  <div class="slide-overlay"></div>
+  <div class="slide-caption">
+    <h3 id="slide-name"></h3>
+    <p id="slide-group"></p>
+  </div>
+  <div class="slide-controls">
+    <button onclick="slidePrev()">‹ Prev</button>
+    <button id="slide-play-btn" onclick="toggleSlide()">⏸ Pause</button>
+    <button onclick="slideNext()">Next ›</button>
+    <button onclick="goTo('chapters')" style="margin-left:8px">✕ Close</button>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lb">
+  <button class="lb-close" onclick="closeLb()">×</button>
+  <button class="lb-arrow lb-prev" onclick="moveLb(-1)">‹</button>
+  <div class="lb-img-wrap">
+    <img id="lb-img" src="" alt="">
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+  <button class="lb-arrow lb-next" onclick="moveLb(1)">›</button>
+  <div class="lb-counter" id="lb-counter"></div>
+  <button class="lb-dl" onclick="downloadCurrent()">⬇ Download</button>
+</div>
+
+<button class="music-btn" id="music-btn" onclick="toggleMusic()" title="Play Birthday Song">🎵</button>
+
+<footer>Made with 💜 for <span>Radha</span> — every photo tells a story worth remembering.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+// ── DATA ──
+const CHAPTERS = [
+  {
+    id:"01_tiny_human", emoji:"🧸", title:"Tiny Human Era",
+    desc:"The precious early years — baby Radha before she took over the world.",
+    gradient:"linear-gradient(135deg,#ff8db8,#ffbd7d)",
+    photos:[
+      "baby_photo_in_hand","little_girl_floral_dress","pink_wall_young_girl",
+      "school_kids_science_fair","toddler_in_fabric_store","young_girl_pink_top","young_girl_tilak"
+    ]
+  },
+  {
+    id:"02_school", emoji:"📚", title:"School Days",
+    desc:"Uniforms, classrooms, study sessions and teachers' day chaos.",
+    gradient:"linear-gradient(135deg,#6ee7b7,#3b82f6)",
+    photos:[
+      "classroom_friends","online_class_squad","school_blazer_desk","school_pinafore_selfie",
+      "school_uniform_laptop","school_uniform_portrait","school_uniform_selfie","school_uniform_selfie_2",
+      "school_uniform_standing","school_uniform_studying","study_session_duo",
+      "studying_at_desk_with_friend","teachers_day_balloon"
+    ]
+  },
+  {
+    id:"03_stage_spotlight", emoji:"🎭", title:"Stage & Spotlight",
+    desc:"Republic Day, Janmashtami, performances — Radha in her element.",
+    gradient:"linear-gradient(135deg,#f59e0b,#ef4444)",
+    photos:[
+      "bharat_mata_costume","bharat_mata_costume_2","bharat_mata_flag_seated",
+      "bharat_mata_republic_day","bharat_mata_republic_day_costume","bharat_mata_school_stage",
+      "bharat_mata_solo","dance_pose_courtyard","folk_hat_performance","janmashtami_group_night",
+      "janmashtami_peacock_selfie","janmashtami_performers_selfie","janmashtami_with_krishna_performer",
+      "krishna_blue_facepaint","krishna_face_paint","krishna_face_paint_2","ncc_republic_day",
+      "performance_makeup_look","republic_day_costume","republic_day_dance_performance",
+      "republic_day_flag_closeup","republic_day_mom_duo","republic_day_performance","republic_day_salute"
+    ]
+  },
+  {
+    id:"04_main_character", emoji:"💜", title:"Main Character",
+    desc:"Selfies, vibes, moods — the Radha cinematic universe.",
+    gradient:"linear-gradient(135deg,#c084fc,#818cf8)",
+    photos:[
+      "birthday_bash_solo","birthday_cake_moment","blue_dupatta_peace","blue_gown_rooftop",
+      "brooding_black_tshirt_selfie","casual_floral_selfie","casual_home_portrait","casual_home_selfie",
+      "casual_night_selfie","christmas_tree_setup","collage_selfie_floral_shirt","dark_laughing_selfie",
+      "ethnic_selfie_portrait","floral_outfit_standing","glam_kurta_selfie","grey_hoodie_selfie",
+      "holi_colors_solo","mirror_selfie_black_kurti","mirror_selfie_casual","mirror_selfie_winter_scarf",
+      "new_year_filter_selfie","orange_kurti_pose","outdoor_bindi_selfie","outdoor_selfie_greenery",
+      "panda_toy_hug","peaceful_sleep","peach_kurti_selfie","pink_kurti_portrait_selfie",
+      "popsicle_selfie","printed_maxi_dress","red_kurti_saree_shop","school_courtyard_pose",
+      "smile_shirt_blue_background","snack_bite_selfie","spiderman_shirt_mirror_selfie",
+      "store_mirror_selfie","vsign_pose_pink_wall","white_top_selfie","winking_funny_selfie",
+      "young_tilak_selfie"
+    ]
+  },
+  {
+    id:"05_my_people", emoji:"🫂", title:"My People",
+    desc:"Family, friends, cousins — the squad that makes life worth living.",
+    gradient:"linear-gradient(135deg,#ec4899,#8b5cf6)",
+    photos:[
+      "big_group_selfie_stairs","bus_ride_selfie","cafe_duo_selfie","close_duo_selfie",
+      "family_couch_selfie","family_indoor_selfie","family_restaurant_dinner","family_riverside_outing",
+      "family_travel_selfie","family_video_call","forest_family_group","holi_rooftop_kids",
+      "hoodie_couch_selfie","hugging_giant_panda_plush","kids_gifting_together","ladies_floor_gathering",
+      "mehendi_mirror_duo","mehendi_mirror_selfie","republic_day_trio","rocky_roots_group",
+      "rooftop_family_photo","rooftop_group_selfie","rope_bridge_group","sibling_restaurant_duo",
+      "snapchat_filter_friends","street_selfie_squad","temple_family_selfie","temple_family_selfie_2",
+      "three_friends_together","three_girls_home","train_trio_selfie","vibes_filter_duo",
+      "video_call_collage","video_call_family","video_call_man","wedding_family_trio",
+      "wedding_group_five","zoo_family_trio"
+    ]
+  },
+  {
+    id:"06_out_and_about", emoji:"🌍", title:"Out & About",
+    desc:"Adventures, restaurants, temples, guitars — Radha explores the world.",
+    gradient:"linear-gradient(135deg,#10b981,#0ea5e9)",
+    photos:[
+      "cafe_bamboo_stairs","construction_site_fun","eating_gola_snack","fancy_cage_restaurant",
+      "fancy_venue_chandelier","ganga_ghat_bathing","garden_swing_solo","good_vibes_cafe",
+      "grand_temple_visit","guitar_at_outdoor_market","guitar_street_market","guitar_street_moment",
+      "guitar_street_with_mask","heart_wall_pose","hilltop_river_view","holding_white_kitten",
+      "lakeside_group_trip","london_bridge_restaurant","mall_visit_pose","mango_orchard_selfie",
+      "night_fountain_solo","night_rocky_namaste","night_swing_city_lights","outdoor_hat_selfie",
+      "park_family_outing","red_jacket_cap_outdoor_selfie","restaurant_hoodie_selfie",
+      "restaurant_mural_pose","restaurant_selfie","restaurant_table_solo","river_ghat_vibes",
+      "riverside_scenic_solo","rope_bridge_adventure","scar_attraction_fun","sitting_empty_road",
+      "swimming_pool_fun","temple_interior_sit","temple_lion_selfie_with_mask",
+      "temple_visit_tilak","young_girl_shopping"
+    ]
+  },
+  {
+    id:"07_traditional_festive", emoji:"🪔", title:"Traditional & Festive",
+    desc:"Navratri, Diwali, weddings, Janmashtami — dressed to celebrate.",
+    gradient:"linear-gradient(135deg,#f97316,#e11d48)",
+    photos:[
+      "anarkali_mehendi_look","devotional_flag_pose","diwali_puja_diyas","festive_procession_gulal",
+      "havan_night_puja","havan_puja_selfie","holi_color_fun","jai_shri_ram_rally",
+      "janmashtami_idol_offering","janmashtami_puja_aarti","lehenga_wedding_event",
+      "mandap_event_floral_skirt","mandap_event_tiedye","mehendi_gold_chair","mehendi_hands_at_event",
+      "mehndi_mirror_trio","navratri_garba_chaniya","navratri_garba_lehenga","navratri_garba_lehenga_2",
+      "navratri_garba_look","om_print_kurta","orange_kurta_balcony","orange_kurta_smile",
+      "orange_salwar_festive","pink_saree_portrait","puja_rooftop_thali","puja_thali_offering",
+      "ram_navami_procession","temple_steps_visit","wedding_anarkali_mehndi","wedding_couple_lehenga",
+      "wedding_couple_portrait","wedding_group_photo","wedding_lehenga_couple",
+      "wedding_lehenga_couple_2","wedding_lehenga_look","wedding_night_duo"
+    ]
+  }
+];
+
+// ── NAVIGATION ──
+// ── PAGE TRANSITIONS ──
+const PAGE_DISPLAY = {hero:'flex', bhutki:'block', chapters:'block', gallery:'block', quiz:'block', slideshow:'block'};
+let activePage = 'hero';
+function goTo(id) {
+  document.querySelectorAll('.page').forEach(p => { p.style.display = 'none'; });
+  document.querySelectorAll('#nav .nav-links button:not(.theme-btn)').forEach(b => b.classList.remove('active'));
+  const page = document.getElementById(id);
+  page.style.display = PAGE_DISPLAY[id] || 'block';
+  page.classList.remove('page-enter');
+  void page.offsetWidth;
+  page.classList.add('page-enter');
+  const btn = document.getElementById('btn-' + id);
+  if (btn) btn.classList.add('active');
+  activePage = id;
+  document.getElementById('nav').style.display = id === 'slideshow' ? 'none' : 'flex';
+  document.body.style.overflow = id === 'slideshow' ? 'hidden' : '';
+  window.scrollTo({top:0,behavior:'smooth'});
+  if (id === 'chapters') initChapters();
+  if (id === 'bhutki') initFacts();
+  if (id === 'quiz') initQuiz();
+  if (id === 'slideshow') initSlideshow();
+  observeSR();
+}
+
+// ── CHAPTERS GRID ──
+function initChapters() {
+  const grid = document.getElementById('chapters-grid');
+  if (grid.childElementCount > 0) return;
+  CHAPTERS.forEach(ch => {
+    const card = document.createElement('div');
+    card.className = 'chapter-card sr-fade';
+    const cover = ch.photos[0];
+    card.innerHTML = `
+      <img class="cover-img" src="photos/${ch.id}/${cover}.jpeg" alt="${ch.title}" loading="lazy">
+      <div class="overlay"></div>
+      <div class="card-body">
+        <div class="card-emoji">${ch.emoji}</div>
+        <h3>${ch.title}</h3>
+        <p>${ch.desc}</p>
+        <span class="badge">${ch.photos.length} photos</span>
+      </div>`;
+    card.onclick = () => openGallery(ch.id);
+    grid.appendChild(card);
+  });
+}
+
+// ── GALLERY ──
+let lbPhotos = [], lbIdx = 0, lbGroup = '';
+function openGallery(chId) {
+  const ch = CHAPTERS.find(c => c.id === chId);
+  currentChapter = ch;
+  document.getElementById('gallery-title').textContent = ch.emoji + ' ' + ch.title;
+  document.getElementById('gallery-desc').textContent = ch.desc;
+  const masonry = document.getElementById('masonry');
+  masonry.innerHTML = '';
+  lbPhotos = ch.photos.map(p => ({src:`photos/${ch.id}/${p}.jpeg`, name:p.replace(/_/g,' ')}));
+  lbGroup = ch.title;
+  ch.photos.forEach((p, i) => {
+    const src = `photos/${ch.id}/${p}.jpeg`;
+    const name = p.replace(/_/g,' ');
+    const div = document.createElement('div');
+    div.className = 'm-item sr-fade';
+    div.innerHTML = `<img src="${src}" loading="lazy" alt="${p}">
+      <div class="photo-name">${name}</div>
+      <button class="dl-photo" onclick="downloadPhoto('${src}','${p}',event)" title="Download">⬇</button>`;
+    div.onclick = () => openLb(i);
+    masonry.appendChild(div);
+  });
+  goTo('gallery');
+}
+
+// ── LIGHTBOX ──
+function openLb(i) {
+  lbIdx = i;
+  renderLb();
+  document.getElementById('lb').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+function renderLb() {
+  const p = lbPhotos[lbIdx];
+  document.getElementById('lb-img').src = p.src;
+  document.getElementById('lb-caption').textContent = p.name;
+  document.getElementById('lb-counter').textContent = (lbIdx+1) + ' / ' + lbPhotos.length;
+}
+function moveLb(d) {
+  lbIdx = (lbIdx + d + lbPhotos.length) % lbPhotos.length;
+  renderLb();
+}
+function closeLb() {
+  document.getElementById('lb').classList.remove('show');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowLeft') moveLb(-1);
+  if (e.key === 'ArrowRight') moveLb(1);
+});
+
+// ── SLIDESHOW ──
+let allPhotos = [], slideIdx = 0, slideTimer = null, slidePlaying = true;
+function initSlideshow() {
+  if (allPhotos.length === 0) {
+    CHAPTERS.forEach(ch => {
+      ch.photos.forEach(p => allPhotos.push({src:`photos/${ch.id}/${p}.jpeg`, name:p.replace(/_/g,' '), group:ch.title}));
+    });
+    // shuffle
+    for (let i = allPhotos.length-1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i+1));
+      [allPhotos[i], allPhotos[j]] = [allPhotos[j], allPhotos[i]];
+    }
+  }
+  showSlide(slideIdx);
+  if (slidePlaying) startSlideTimer();
+}
+function showSlide(i) {
+  const p = allPhotos[i];
+  document.getElementById('slide-bg').style.backgroundImage = `url('${p.src}')`;
+  document.getElementById('slide-name').textContent = p.name;
+  document.getElementById('slide-group').textContent = p.group;
+}
+function slideNext() { slideIdx = (slideIdx+1) % allPhotos.length; showSlide(slideIdx); }
+function slidePrev() { slideIdx = (slideIdx-1+allPhotos.length) % allPhotos.length; showSlide(slideIdx); }
+function startSlideTimer() { clearInterval(slideTimer); slideTimer = setInterval(slideNext, 4000); }
+function toggleSlide() {
+  slidePlaying = !slidePlaying;
+  document.getElementById('slide-play-btn').textContent = slidePlaying ? '⏸ Pause' : '▶ Play';
+  if (slidePlaying) startSlideTimer(); else clearInterval(slideTimer);
+}
+
+// ── CONFETTI ──
+(function(){
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx = canvas.getContext('2d');
+  const colors = ['#f9a8d4','#c084fc','#818cf8','#67e8f9','#fde68a','#6ee7b7'];
+  let W, H, particles = [];
+  function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+  for (let i=0; i<120; i++) particles.push({
+    x: Math.random()*2000, y: Math.random()*2000-1000,
+    r: Math.random()*5+2, d: Math.random()*120+20,
+    color: colors[Math.floor(Math.random()*colors.length)],
+    tilt: Math.random()*10-10, tiltAngle: 0,
+    tiltAngleIncrement: Math.random()*.07+.05,
+    opacity: Math.random()*.7+.3
+  });
+  let angle = 0;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    angle += .01;
+    particles.forEach((p,i) => {
+      p.tiltAngle += p.tiltAngleIncrement;
+      p.y += (Math.cos(angle+p.d)+1+p.r/2)/2;
+      p.x += Math.sin(angle);
+      p.tilt = Math.sin(p.tiltAngle)*12;
+      if (p.y > H+20) { p.y = -20; p.x = Math.random()*W; }
+      ctx.beginPath();
+      ctx.lineWidth = p.r/2;
+      ctx.strokeStyle = p.color;
+      ctx.globalAlpha = p.opacity;
+      ctx.moveTo(p.x+p.tilt+p.r/4, p.y);
+      ctx.lineTo(p.x+p.tilt, p.y+p.tilt+p.r/4);
+      ctx.stroke();
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── FLOATING HEARTS ──
+(function(){
+  const container = document.getElementById('hearts');
+  const emojis = ['💜','🌸','✨','💫','🎂','🎀','🌺'];
+  setInterval(() => {
+    const h = document.createElement('span');
+    h.className = 'fh';
+    h.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    h.style.left = Math.random()*100 + 'vw';
+    h.style.animationDuration = (4+Math.random()*4) + 's';
+    h.style.animationDelay = '0s';
+    h.style.fontSize = (1+Math.random()*1.5) + 'rem';
+    container.appendChild(h);
+    setTimeout(() => h.remove(), 8000);
+  }, 700);
+})();
+
+// ── BHUTKI FACTS ──
+const FACTS = [
+  {emoji:"🎭", title:"Drama Level", body:"Oscar-worthy. Every small inconvenience is a five-act tragedy. Spilled tea = full breakdown."},
+  {emoji:"📏", title:"Fun-Sized", body:"Short in height, tall in personality. Will fight anyone who makes a height joke. While standing on tiptoes."},
+  {emoji:"👑", title:"Main Character", body:"Every room she enters, she's the protagonist. Everyone else is a supporting cast member. Including you."},
+  {emoji:"😤", title:"Will Not Apologise", body:"Even when she's wrong. Especially when she's wrong. Has never lost an argument (in her head)."},
+  {emoji:"📸", title:"Selfie Machine", body:"199 photos in this site. She's in roughly 199 of them. Coincidence? No."},
+  {emoji:"🎤", title:"Loudest in the Room", body:"Conversations at one volume: LOUD. Subtlety is for other people."},
+  {emoji:"💅", title:"Fashion Goddess", body:"Takes 45 minutes to get ready. Worth it every single time. Annoyingly."},
+  {emoji:"🥺", title:"Actually Very Sweet", body:"Behind all the drama is the most caring, loving person. Don't tell her I said this."},
+  {emoji:"🤝", title:"Bhutki", body:"The name given. The identity fully owned. There is no Radha without Bhutki and no Bhutki without chaos."},
+  {emoji:"💜", title:"My Little Sister", body:"Annoying, dramatic, short, loud — and the best thing our family ever got. Happy Birthday, Bhutki. — Sugandh"}
+];
+
+function initFacts() {
+  const grid = document.getElementById('facts-grid');
+  if (grid.childElementCount > 0) return;
+  FACTS.forEach(f => {
+    const card = document.createElement('div');
+    card.className = 'fact-card sr-fade';
+    card.innerHTML = `<div class="fact-emoji">${f.emoji}</div><h4>${f.title}</h4><p>${f.body}</p>`;
+    grid.appendChild(card);
+  });
+}
+
+// ── BIRTHDAY SONG (Web Audio API) ──
+let audioCtx = null, songPlaying = false, songNodes = [];
+const SONG = [
+  [392,.3],[392,.3],[440,.6],[392,.6],[523,.6],[494,1.1],
+  [392,.3],[392,.3],[440,.6],[392,.6],[587,.6],[523,1.1],
+  [392,.3],[392,.3],[784,.6],[659,.6],[523,.6],[494,.6],[440,1.1],
+  [698,.3],[698,.3],[659,.6],[523,.6],[587,.6],[523,1.2]
+];
+function toggleMusic() {
+  if (songPlaying) { stopSong(); return; }
+  playSong();
+}
+function playSong() {
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  let t = audioCtx.currentTime + 0.1;
+  songNodes = [];
+  SONG.forEach(([freq, dur]) => {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain); gain.connect(audioCtx.destination);
+    osc.type = 'sine'; osc.frequency.value = freq;
+    gain.gain.setValueAtTime(0.25, t);
+    gain.gain.exponentialRampToValueAtTime(0.001, t + dur * 0.95);
+    osc.start(t); osc.stop(t + dur);
+    songNodes.push(osc); t += dur * 0.88;
+  });
+  songPlaying = true;
+  const btn = document.getElementById('music-btn');
+  btn.textContent = '🔊'; btn.classList.add('playing');
+  setTimeout(stopSong, SONG.reduce((a,[,d])=>a+d*0.88,0)*1000+500);
+}
+function stopSong() {
+  songNodes.forEach(n => { try { n.stop(); } catch(e){} });
+  if (audioCtx) { audioCtx.close(); audioCtx = null; }
+  songPlaying = false;
+  const btn = document.getElementById('music-btn');
+  btn.textContent = '🎵'; btn.classList.remove('playing');
+}
+
+// ── DOWNLOAD SINGLE PHOTO ──
+function downloadCurrent() {
+  const p = lbPhotos[lbIdx];
+  const a = document.createElement('a');
+  a.href = p.src; a.download = p.name + '.jpeg';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+function downloadPhoto(src, name, e) {
+  e.stopPropagation();
+  const a = document.createElement('a');
+  a.href = src; a.download = name + '.jpeg';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+
+// ── DOWNLOAD FULL CHAPTER AS ZIP ──
+let currentChapter = null;
+async function downloadChapter() {
+  if (!currentChapter) return;
+  const btn = document.getElementById('dl-all-btn');
+  btn.textContent = '⏳ Zipping...'; btn.disabled = true;
+  const zip = new JSZip();
+  const folder = zip.folder(currentChapter.title);
+  const fetches = currentChapter.photos.map(async name => {
+    const src = `photos/${currentChapter.id}/${name}.jpeg`;
+    try {
+      const res = await fetch(src);
+      const blob = await res.blob();
+      folder.file(name + '.jpeg', blob);
+    } catch(e) { console.warn('skip', name); }
+  });
+  await Promise.all(fetches);
+  const blob = await zip.generateAsync({type:'blob'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = currentChapter.title + '.zip';
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+  btn.textContent = '⬇ Download All'; btn.disabled = false;
+}
+
+// ── BIRTHDAY CAKE BLOWOUT ──
+let candleLit = true;
+function blowCandle() {
+  if (!candleLit) return;
+  candleLit = false;
+  document.getElementById('cake-wrap').classList.add('flame-out');
+  document.querySelector('.cake-hint').textContent = '🎉 Make a wish, Bhutki!';
+  // extra confetti burst
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx = canvas.getContext('2d');
+  const bursts = Array.from({length:60}, () => ({
+    x: canvas.width/2, y: canvas.height/2,
+    vx: (Math.random()-0.5)*12, vy: (Math.random()-1)*14,
+    r: Math.random()*5+2, life:1,
+    color:['#f9a8d4','#c084fc','#fde68a','#67e8f9','#818cf8'][Math.floor(Math.random()*5)]
+  }));
+  let frame = 0;
+  function burst() {
+    if (++frame > 60) return;
+    bursts.forEach(p => {
+      p.x += p.vx; p.y += p.vy; p.vy += 0.4; p.life -= 0.016;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+      ctx.fillStyle = p.color; ctx.globalAlpha = p.life; ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(burst);
+  }
+  burst();
+  playSong();
+}
+
+// ── SURPRISE ME ──
+function surpriseMe() {
+  if (allPhotos.length === 0) {
+    CHAPTERS.forEach(ch => ch.photos.forEach(p =>
+      allPhotos.push({src:`photos/${ch.id}/${p}.jpeg`, name:p.replace(/_/g,' '), group:ch.title})
+    ));
+  }
+  const pick = allPhotos[Math.floor(Math.random() * allPhotos.length)];
+  lbPhotos = [{src: pick.src, name: pick.name}];
+  lbGroup = pick.group;
+  lbIdx = 0;
+  renderLb();
+  document.getElementById('lb').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+// ── PHOTO QUIZ ──
+let quizQ = 0, quizScore = 0, quizTotal = 10, quizPool = [], quizAnswered = false;
+function initQuiz() {
+  quizQ = 0; quizScore = 0; quizAnswered = false;
+  quizPool = [];
+  CHAPTERS.forEach(ch => ch.photos.forEach(p =>
+    quizPool.push({src:`photos/${ch.id}/${p}.jpeg`, chapter:ch})
+  ));
+  for (let i = quizPool.length-1; i > 0; i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [quizPool[i],quizPool[j]] = [quizPool[j],quizPool[i]];
+  }
+  document.getElementById('quiz-result').textContent = '';
+  document.getElementById('quiz-next').style.display = 'none';
+  loadQuizQ();
+}
+function loadQuizQ() {
+  if (quizQ >= quizTotal) { endQuiz(); return; }
+  quizAnswered = false;
+  const item = quizPool[quizQ];
+  document.getElementById('quiz-img').src = item.src;
+  document.getElementById('quiz-score').textContent = `Score: ${quizScore} / ${quizQ}  •  Question ${quizQ+1} of ${quizTotal}`;
+  document.getElementById('quiz-result').textContent = '';
+  document.getElementById('quiz-next').style.display = 'none';
+  // pick 3 wrong options
+  const wrong = CHAPTERS.filter(c => c.id !== item.chapter.id)
+    .sort(() => Math.random()-.5).slice(0,3);
+  const opts = [...wrong, item.chapter].sort(() => Math.random()-.5);
+  const container = document.getElementById('quiz-options');
+  container.innerHTML = '';
+  opts.forEach(ch => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.textContent = ch.emoji + ' ' + ch.title;
+    btn.onclick = () => answerQuiz(btn, ch.id === item.chapter.id, item.chapter.title);
+    container.appendChild(btn);
+  });
+}
+function answerQuiz(btn, correct, correctTitle) {
+  if (quizAnswered) return;
+  quizAnswered = true;
+  if (correct) {
+    btn.classList.add('correct');
+    quizScore++;
+    document.getElementById('quiz-result').textContent = '✅ Correct!';
+  } else {
+    btn.classList.add('wrong');
+    document.querySelectorAll('.quiz-opt').forEach(b => {
+      if (b.textContent.includes(correctTitle)) b.classList.add('correct');
+    });
+    document.getElementById('quiz-result').textContent = `❌ It was: ${correctTitle}`;
+  }
+  quizQ++;
+  document.getElementById('quiz-next').style.display = quizQ < quizTotal ? 'inline-block' : 'none';
+  if (quizQ >= quizTotal) setTimeout(endQuiz, 900);
+}
+function nextQuizQ() { loadQuizQ(); }
+function endQuiz() {
+  document.getElementById('quiz-img').src = '';
+  document.getElementById('quiz-options').innerHTML = '';
+  document.getElementById('quiz-next').style.display = 'none';
+  const pct = Math.round(quizScore/quizTotal*100);
+  const msg = pct===100?'🏆 Perfect score! You know Bhutki too well!':pct>=70?'🌟 Great job! You\'ve been paying attention!':pct>=40?'😅 Not bad — look through the chapters again!':'🤣 Did you even look at the photos?';
+  document.getElementById('quiz-score').textContent = `Final Score: ${quizScore} / ${quizTotal}`;
+  document.getElementById('quiz-result').innerHTML = `<div style="font-size:2rem">${msg}</div><br><button class="hero-btn" style="font-size:.9rem;padding:12px 24px" onclick="initQuiz()">Play Again 🔄</button>`;
+}
+
+// ── THEME TOGGLE ──
+let isDark = true;
+function toggleTheme() {
+  isDark = !isDark;
+  document.body.classList.toggle('light', !isDark);
+  document.getElementById('theme-btn').textContent = isDark ? '🌙 Dark' : '☀️ Light';
+}
+
+// ── SCROLL REVEAL ──
+function observeSR() {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, {threshold:.1});
+  document.querySelectorAll('.sr-fade:not(.visible)').forEach(el => io.observe(el));
+}
+observeSR();
+</script>
+</body>
+</html>
